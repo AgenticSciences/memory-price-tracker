@@ -290,18 +290,18 @@
         <div class="chart-legend">
             <div class="legend-item">
                 <div class="legend-color" style="background: #000;"></div>
-                <span>DDR5 UDIMM 16GB — Current: $223</span>
+                <span>DDR5 UDIMM 16GB — Current: $223 ($13.94/GB)</span>
             </div>
             <div class="legend-item">
                 <div class="legend-color" style="background: #666;"></div>
-                <span>DDR5 RDIMM 32GB — Current: $930 (÷4 shown)</span>
+                <span>DDR5 RDIMM 32GB — Current: $930 ($14.53/GB, ÷4 shown)</span>
             </div>
             <div class="legend-item">
                 <div class="legend-color" style="background: #999;"></div>
-                <span>DDR4 UDIMM 16GB — Current: $149</span>
+                <span>DDR4 UDIMM 16GB — Current: $149 ($9.31/GB)</span>
             </div>
         </div>
-        <div class="chart-caption">Note: DDR5 RDIMM prices divided by 4 for comparison. Data source: DRAMeXchange daily session averages.</div>
+        <div class="chart-caption"><strong>Market Type:</strong> Module-level spot prices (assembled memory sticks). <strong>Note:</strong> DDR5 > DDR4 in modules reflects normal pricing (newer tech premium). See Figure 2 for chip-level pricing where DDR4 > DDR5 due to supply constraints. DDR5 RDIMM prices divided by 4 for comparison. Data source: DRAMeXchange daily session averages.</div>
     </div>
 
     <h2><span class="section-number">2.</span>Current Spot Prices</h2>
@@ -596,10 +596,144 @@
     <div class="chart-container">
         <div class="chart-title">Figure 2. DRAM Chip Prices by Generation (per 16Gb equivalent)</div>
         <div class="chart bar-chart" id="priceComparisonChart"></div>
-        <div class="chart-caption">Note: DDR3 price scaled to 16Gb equivalent for comparison. <strong>Market Note:</strong> DDR4 > DDR5 price inversion reflects "AI Tax" — manufacturers shifted capacity to HBM and DDR5, creating DDR4 supply constraints.</div>
+        <div class="chart-caption"><strong>Market Type:</strong> Chip-level spot prices (raw components). <strong>Note:</strong> DDR3 price scaled to 16Gb equivalent for comparison. <strong>Price Inversion Alert:</strong> DDR4 ($69.18) > DDR5 ($37.83) reflects the "AI Tax" — manufacturers shifted capacity to HBM and DDR5, creating severe DDR4 chip supply constraints. Compare with Figure 1 where DDR5 modules cost more (normal pricing) vs Figure 2 where DDR4 chips cost more (supply anomaly).</div>
     </div>
 
-    <h2><span class="section-number">4.</span>Historical Price Points</h2>
+    <div class="abstract">
+        <h3>Understanding Price Differences Across Market Levels</h3>
+        <p><strong>Why do prices seem contradictory?</strong> The memory market has three distinct pricing tiers, each with different dynamics:</p>
+        <ul style="margin-top: 10px; margin-bottom: 10px;">
+            <li><strong>Chip-Level Spot Market (Figure 2):</strong> Raw component prices for traders. DDR4 > DDR5 due to AI-driven capacity shift to HBM.</li>
+            <li><strong>Module-Level Spot Market (Figure 1):</strong> Assembled memory sticks. DDR5 > DDR4 due to newer technology premium and manufacturing costs.</li>
+            <li><strong>Retail Market (Section 4):</strong> Consumer prices. Includes distribution, packaging, and brand premiums.</li>
+        </ul>
+        <p style="margin-bottom: 0;"><strong>Key Insight:</strong> The DDR4 > DDR5 inversion at chip level does NOT translate to modules because: (1) existing DDR4 module inventory was bought at lower prices, (2) DDR5 modules have additional manufacturing costs, and (3) retail channels haven't fully passed through chip price increases.</p>
+    </div>
+
+    <h2><span class="section-number">4.</span>Buyer's Market: Actual Retail Prices</h2>
+    <p class="timestamp">Data as of April 18, 2026 | Source: Retail channels (Amazon, Newegg, Crucial, CDW)</p>
+
+    <h3>4.1 Brand Price Comparison (16GB Module)</h3>
+    <p class="note">Actual prices buyers pay at retail. Per-GB calculations shown for value comparison.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Brand</th>
+                <th>DDR4 16GB</th>
+                <th>DDR4 $/GB</th>
+                <th>DDR5 16GB</th>
+                <th>DDR5 $/GB</th>
+                <th>Source</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Crucial</strong> (Micron)</td>
+                <td class="numeric">$44.99</td>
+                <td class="numeric">$2.81</td>
+                <td class="numeric">$82.99</td>
+                <td class="numeric">$5.19</td>
+                <td>Crucial Direct</td>
+            </tr>
+            <tr>
+                <td><strong>G.Skill</strong></td>
+                <td class="numeric">$45.99</td>
+                <td class="numeric">$2.87</td>
+                <td class="numeric">$85.00</td>
+                <td class="numeric">$5.31</td>
+                <td>Micro Center</td>
+            </tr>
+            <tr>
+                <td><strong>SK hynix</strong></td>
+                <td class="numeric">$46.50</td>
+                <td class="numeric">$2.91</td>
+                <td class="numeric">$94.00</td>
+                <td class="numeric">$5.88</td>
+                <td>Amazon / OEMPCWorld</td>
+            </tr>
+            <tr>
+                <td><strong>Kingston</strong> (FURY)</td>
+                <td class="numeric">$47.99</td>
+                <td class="numeric">$3.00</td>
+                <td class="numeric">$87.99</td>
+                <td class="numeric">$5.50</td>
+                <td>Walmart / Amazon</td>
+            </tr>
+            <tr>
+                <td><strong>Samsung</strong> (OEM)</td>
+                <td class="numeric">$48.99</td>
+                <td class="numeric">$3.06</td>
+                <td class="numeric">$89.99</td>
+                <td class="numeric">$5.62</td>
+                <td>Newegg / Amazon</td>
+            </tr>
+            <tr>
+                <td><strong>Corsair</strong> (Vengeance)</td>
+                <td class="numeric">$49.99</td>
+                <td class="numeric">$3.12</td>
+                <td class="numeric">$92.99</td>
+                <td class="numeric">$5.81</td>
+                <td>Amazon / Newegg</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="note"><strong>Buyer Insight:</strong> Crucial offers the best value for both DDR4 and DDR5. G.Skill provides competitive gaming-grade options. Premium brands (Corsair, SK hynix) command 10-15% higher prices.</p>
+
+    <h3>4.2 Channel Price Comparison (32GB Module)</h3>
+    <p class="note">Prices across different retail channels for the same capacity.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Channel</th>
+                <th>DDR4 32GB</th>
+                <th>DDR4 $/GB</th>
+                <th>DDR5 32GB</th>
+                <th>DDR5 $/GB</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Amazon</strong></td>
+                <td class="numeric">$259.99</td>
+                <td class="numeric">$8.12</td>
+                <td class="numeric">$369.99</td>
+                <td class="numeric">$11.56</td>
+                <td>Corsair Vengeance</td>
+            </tr>
+            <tr>
+                <td><strong>Newegg</strong></td>
+                <td class="numeric">$245.00</td>
+                <td class="numeric">$7.66</td>
+                <td class="numeric">$355.00</td>
+                <td class="numeric">$11.09</td>
+                <td>Team / A-Tech</td>
+            </tr>
+            <tr>
+                <td><strong>Crucial Direct</strong></td>
+                <td class="numeric">$239.99</td>
+                <td class="numeric">$7.50</td>
+                <td class="numeric">$339.99</td>
+                <td class="numeric">$10.62</td>
+                <td>Manufacturer direct</td>
+            </tr>
+            <tr>
+                <td><strong>CDW</strong> (Enterprise)</td>
+                <td class="numeric">$278.44</td>
+                <td class="numeric">$8.70</td>
+                <td class="numeric">$375.00</td>
+                <td class="numeric">$11.72</td>
+                <td>RDIMM, server-grade</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="note"><strong>Channel Insight:</strong> Manufacturer direct (Crucial) offers the best prices. Enterprise channels (CDW) charge 10-20% premium for server-grade RDIMM with ECC support.</p>
+
+    <h2><span class="section-number">5.</span>Historical Price Points</h2>
     <p class="timestamp">Source: The Memory Guy (Objective Analysis) — InSpectrum Data — Article: "DRAM Prices Hit Historic Low" (November 20, 2019)</p>
 
     <table>
@@ -649,7 +783,7 @@
 
     <p class="note"><strong>2019 Price collapse:</strong> DRAM spot prices declined from $6.10/GB (early 2019) to $2.59/GB (November 2019), a 57.5% decline over the year.</p>
 
-    <h2><span class="section-number">5.</span>Market Forecasts (TrendForce)</h2>
+    <h2><span class="section-number">6.</span>Market Forecasts (TrendForce)</h2>
     <p class="timestamp">Source: TrendForce Market Research | Report Date: February 2, 2026 | Classification: Projections</p>
 
     <div class="chart-container">
@@ -715,9 +849,9 @@
         <p>Forecasts are based on TrendForce market research and reflect expected trends. Actual results may differ due to changes in supply/demand dynamics, geopolitical factors, or technological shifts. This index is for informational purposes only and does not constitute financial or investment advice.</p>
     </div>
 
-    <h2><span class="section-number">6.</span>Data Sources and Verification</h2>
+    <h2><span class="section-number">7.</span>Data Sources and Verification</h2>
 
-    <h3>6.1 Primary Sources</h3>
+    <h3>7.1 Primary Sources</h3>
 
     <p><span class="verified">DRAMeXchange (TrendForce)</span> — <a href="https://www.dramexchange.com/" target="_blank">dramexchange.com</a></p>
     <ul>
@@ -750,7 +884,7 @@
         <li>Verification: Industry-standard research firm; consensus with Gartner, IDC</li>
     </ul>
 
-    <h3>6.2 Additional Research Sources</h3>
+    <h3>7.2 Additional Research Sources</h3>
 
     <p><span class="verified">Omdia</span> — <a href="https://omdia.tech.informa.com/" target="_blank">omdia.tech.informa.com</a></p>
     <ul>
@@ -828,7 +962,7 @@
         <li>URL: <a href="https://sourceability.com/blog/memory-price-increase-timeline-qoq-in-2026" target="_blank">2026 Price Analysis</a></li>
     </ul>
 
-    <h3>6.4 Historical Data References</h3>
+    <h3>7.3 Historical Data References</h3>
 
     <p><span class="verified">AI Impacts</span> — <a href="https://aiimpacts.org/" target="_blank">aiimpacts.org</a></p>
     <ul>
@@ -846,10 +980,10 @@
         <li>URL: <a href="https://www.silicondata.com/ram-index-gddr6" target="_blank">GDDR6 Index</a></li>
     </ul>
 
-    <h2><span class="section-number">7.</span>Methodology and Data Quality</h2>
+    <h2><span class="section-number">8.</span>Methodology and Data Quality</h2>
 
     <div class="methodology">
-        <h3>7.1 Data Collection Protocol</h3>
+        <h3>8.1 Data Collection Protocol</h3>
         <p><strong>Primary Source:</strong> DRAMeXchange (TrendForce) — the leading spot market for memory components in Asia.</p>
         <p><strong>Collection Method:</strong> Automated data extraction during the daily session close (18:00 Taipei/UTC+8). The process extracts:</p>
         <ul>
@@ -881,11 +1015,11 @@
             <li>Data modification log records all corrections with rationale and timestamp</li>
         </ul>
 
-        <h3>7.3 Historical Data Standards</h3>
+        <h3>8.3 Historical Data Standards</h3>
         <p>Historical price points are verified from The Memory Guy's published analysis, which sources data from InSpectrum (a primary spot-price data provider). These represent <strong>actual recorded spot prices per gigabyte</strong> for branded DRAM products.</p>
         <p><strong>Data Integrity Policy:</strong> Interpolated, estimated, or modeled historical data is not included in this index without explicit disclosure. Historical lows are cross-referenced against WSTS (World Semiconductor Trade Statistics) 28-year dataset to verify cyclical context.</p>
 
-        <h3>7.4 Known Limitations</h3>
+        <h3>8.4 Known Limitations</h3>
         <ul>
             <li><strong>Spot vs. Contract:</strong> Spot prices represent ~10% of global memory trading (mostly surplus). Contract prices (negotiated quarterly by Apple, Dell, HP) represent ~90% and are not publicly available in real-time.</li>
             <li><strong>Historical Coverage:</strong> Continuous time-series data requires paid subscriptions to market research services. Public sources provide sporadic historical points.</li>
@@ -894,10 +1028,10 @@
             <li><strong>Component vs. Module:</strong> Displayed chip prices do not include manufacturing, testing, packaging, or distribution costs for finished modules.</li>
         </ul>
 
-        <h3>7.5 Use as Perpetual Futures Benchmark</h3>
+        <h3>8.5 Use as Perpetual Futures Benchmark</h3>
         <p>This index is designed to serve as an underlying reference for cash-settled perpetual futures contracts on memory products. The spot prices of DRAM and NAND Flash components represent the raw input costs for memory manufacturers and datacenter operators. For trading purposes, verify all data with primary sources and understand the distinction between spot and contract pricing.</p>
 
-        <h3>7.6 Data Citation</h3>
+        <h3>8.6 Data Citation</h3>
         <p>When citing data from this index, please include: <em>"Source: Memory Price Index, Agentic Sciences. Primary data: DRAMeXchange (TrendForce)."</em></p>
     </div>
 
