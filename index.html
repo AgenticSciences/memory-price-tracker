@@ -1154,9 +1154,9 @@
                 svg.appendChild(line);
             }
 
-            // Y-axis labels
+            // Y-axis labels (reversed so 0 is at bottom, maxValue at top)
             for (let i = 0; i <= 4; i++) {
-                const value = (i / 4) * maxValue;
+                const value = ((4 - i) / 4) * maxValue;
                 const y = padding.top + (i / 4) * chartHeight;
                 const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttribute('x', padding.left - 10);
