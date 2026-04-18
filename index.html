@@ -305,7 +305,13 @@
     </div>
 
     <h2><span class="section-number">2.</span>Current Spot Prices</h2>
-    <p class="timestamp">Source: DRAMeXchange | Updated: April 17, 2026 18:00 GMT+8</p>
+    <p class="timestamp">
+        <strong>Data Source:</strong> DRAMeXchange (TrendForce) |
+        <strong>Session:</strong> DXI April 16, 2026, 18:00 Taipei (UTC+8) |
+        <strong>Last Update:</strong> April 17, 2026 |
+        <a href="https://www.dramexchange.com/" target="_blank" style="font-size: 9pt;">Verify at Source →</a>
+    </p>
+    <p class="note"><strong>Reliability Note:</strong> Prices represent actual trading session averages. Products with no volume in a session carry forward the previous close and are marked with an asterisk (*). All price changes greater than 15% trigger manual verification before publication.</p>
 
     <h3>2.1 DDR5 (5th Generation)</h3>
 
@@ -798,30 +804,64 @@
         <li>URL: <a href="https://www.silicondata.com/ram-index-gddr6" target="_blank">GDDR6 Index</a></li>
     </ul>
 
-    <h2><span class="section-number">7.</span>Methodology and Limitations</h2>
+    <h2><span class="section-number">7.</span>Methodology and Data Quality</h2>
 
     <div class="methodology">
-        <h3>7.1 Data Collection</h3>
-        <p>Current prices are collected directly from DRAMeXchange (TrendForce) via automated web scraping. The process extracts session averages, daily/weekly ranges, and percentage changes for each product category.</p>
-
-        <h3>7.2 Historical Data</h3>
-        <p>Historical price points are verified from The Memory Guy's published analysis, which sources data from InSpectrum. These represent actual recorded spot prices per gigabyte for branded DRAM products. Interpolated or estimated historical data is not included in this index.</p>
-
-        <h3>7.3 Limitations</h3>
+        <h3>7.1 Data Collection Protocol</h3>
+        <p><strong>Primary Source:</strong> DRAMeXchange (TrendForce) — the leading spot market for memory components in Asia.</p>
+        <p><strong>Collection Method:</strong> Automated data extraction during the daily session close (18:00 Taipei/UTC+8). The process extracts:</p>
         <ul>
-            <li>Historical data points are sporadic; continuous time-series data requires paid subscriptions to market research services</li>
-            <li>Spot prices may not reflect contract prices paid by large-volume buyers</li>
-            <li>Component prices do not include manufacturing, testing, or distribution costs for finished modules</li>
-            <li>Regional price variations are not reflected in this index</li>
+            <li><strong>Session Average:</strong> The weighted average price of all executed trades during the session</li>
+            <li><strong>Daily Range:</strong> High and low prices traded during the session</li>
+            <li><strong>Percentage Change:</strong> Change relative to the previous session close</li>
+            <li><strong>Volume Status:</strong> Whether the product had active trading or carried forward a stale price</li>
         </ul>
 
-        <h3>7.4 Use as Perpetual Futures Benchmark</h3>
+        <h3>7.2 Data Verification Chain</h3>
+        <p><strong>Step 1 — Ingestion Validation:</strong></p>
+        <ul>
+            <li>Null or zero values are rejected; previous close is carried forward with asterisk (*) notation</li>
+            <li>Single-session price changes exceeding 15% trigger manual review before publication</li>
+            <li>DOM structure changes in source website trigger scrape failure alerts</li>
+        </ul>
+
+        <p><strong>Step 2 — Cross-Verification:</strong></p>
+        <ul>
+            <li>Spot trends are compared against TrendForce monthly contract price reports</li>
+            <li>Retail price movements (PCPartPicker, Amazon) are monitored as lagging indicators</li>
+            <li>Analyst consensus (Gartner, IDC, Omdia) is referenced for directional validation</li>
+        </ul>
+
+        <p><strong>Step 3 — Publication:</strong></p>
+        <ul>
+            <li>All prices are timestamped with session date, time, and timezone</li>
+            <li>Direct source links are provided for user verification</li>
+            <li>Data modification log records all corrections with rationale and timestamp</li>
+        </ul>
+
+        <h3>7.3 Historical Data Standards</h3>
+        <p>Historical price points are verified from The Memory Guy's published analysis, which sources data from InSpectrum (a primary spot-price data provider). These represent <strong>actual recorded spot prices per gigabyte</strong> for branded DRAM products.</p>
+        <p><strong>Data Integrity Policy:</strong> Interpolated, estimated, or modeled historical data is not included in this index without explicit disclosure. Historical lows are cross-referenced against WSTS (World Semiconductor Trade Statistics) 28-year dataset to verify cyclical context.</p>
+
+        <h3>7.4 Known Limitations</h3>
+        <ul>
+            <li><strong>Spot vs. Contract:</strong> Spot prices represent ~10% of global memory trading (mostly surplus). Contract prices (negotiated quarterly by Apple, Dell, HP) represent ~90% and are not publicly available in real-time.</li>
+            <li><strong>Historical Coverage:</strong> Continuous time-series data requires paid subscriptions to market research services. Public sources provide sporadic historical points.</li>
+            <li><strong>Product Scope:</strong> Currently covers DRAM spot market. NAND Flash, HBM, LPDDR, and contract pricing are planned additions.</li>
+            <li><strong>Regional Variations:</strong> Prices reflect Asia spot market; regional variations (US, Europe) are not reflected.</li>
+            <li><strong>Component vs. Module:</strong> Displayed chip prices do not include manufacturing, testing, packaging, or distribution costs for finished modules.</li>
+        </ul>
+
+        <h3>7.5 Use as Perpetual Futures Benchmark</h3>
         <p>This index is designed to serve as an underlying reference for cash-settled perpetual futures contracts on memory products. The spot prices of DRAM and NAND Flash components represent the raw input costs for memory manufacturers and datacenter operators. For trading purposes, verify all data with primary sources and understand the distinction between spot and contract pricing.</p>
+
+        <h3>7.6 Data Citation</h3>
+        <p>When citing data from this index, please include: <em>"Source: Memory Price Index, Agentic Sciences. Primary data: DRAMeXchange (TrendForce)."</em></p>
     </div>
 
     <footer>
         <p><strong>Memory Price Index</strong></p>
-        <p>Updated: April 17, 2026 | Verified: April 18, 2026 | All prices in USD</p>
+        <p>Last Updated: April 18, 2026 | All prices in USD</p>
         <p style="margin-top: 12pt;">
             <a href="https://github.com/AgenticSciences/memory-price-tracker" target="_blank">github.com/AgenticSciences/memory-price-tracker</a>
         </p>
