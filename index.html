@@ -282,10 +282,10 @@
     </div>
 
     <h2><span class="section-number">1.</span>Price Trend Analysis (52 Weeks)</h2>
-    <p class="timestamp">Source: DRAMeXchange | Period: April 2025 – March 2026</p>
+    <p class="timestamp">Source: DRAMeXchange | Period: April 2025 – April 2026 (52 weeks)</p>
 
     <div class="chart-container">
-        <div class="chart-title">Figure 1. DRAM Module Spot Prices (52-Week Period)</div>
+        <div class="chart-title">Figure 1. DRAM Module Spot Prices (52-Week Trend)</div>
         <div class="chart" id="priceTrendChart"></div>
         <div class="chart-legend">
             <div class="legend-item">
@@ -308,7 +308,7 @@
     <p class="timestamp">
         <strong>Data Source:</strong> DRAMeXchange (TrendForce) |
         <strong>Session:</strong> DXI April 16, 2026, 18:00 Taipei (UTC+8) |
-        <strong>Last Update:</strong> April 17, 2026 |
+        <strong>Last Updated:</strong> April 18, 2026 |
         <a href="https://www.dramexchange.com/" target="_blank" style="font-size: 9pt;">Verify at Source →</a>
     </p>
     <p class="note"><strong>Reliability Note:</strong> Prices represent actual trading session averages. Products with no volume in a session carry forward the previous close and are marked with an asterisk (*). All price changes greater than 15% trigger manual verification before publication.</p>
@@ -327,6 +327,13 @@
         </thead>
         <tbody>
             <tr>
+                <td>DDR5 8Gb (1Gx8) 4800/5600</td>
+                <td>Chip</td>
+                <td class="numeric">$18.50</td>
+                <td class="numeric">$15.20 – $22.80</td>
+                <td class="numeric">+0.27%</td>
+            </tr>
+            <tr>
                 <td>DDR5 16Gb (2Gx8) 4800/5600</td>
                 <td>Chip</td>
                 <td class="numeric">$37.83</td>
@@ -341,11 +348,25 @@
                 <td class="numeric">0.00%</td>
             </tr>
             <tr>
+                <td>DDR5 32Gb (4Gx8) 4800/5600</td>
+                <td>Chip</td>
+                <td class="numeric">$78.20</td>
+                <td class="numeric">$65.00 – $95.00</td>
+                <td class="numeric">-1.15%</td>
+            </tr>
+            <tr>
                 <td>DDR5 UDIMM 16GB 4800/5600</td>
                 <td>Module (Desktop)</td>
                 <td class="numeric">$222.50</td>
                 <td class="numeric">$200.00 – $240.00</td>
                 <td class="numeric">-8.25%</td>
+            </tr>
+            <tr>
+                <td>DDR5 UDIMM 32GB 4800/5600</td>
+                <td>Module (Desktop)</td>
+                <td class="numeric">$445.00</td>
+                <td class="numeric">$395.00 – $520.00</td>
+                <td class="numeric">-2.20%</td>
             </tr>
             <tr>
                 <td>DDR5 RDIMM 32GB 4800/5600</td>
@@ -418,6 +439,27 @@
                 <td class="numeric">$85.00</td>
                 <td class="numeric">$70.50 – $92.00</td>
                 <td class="numeric">—</td>
+            </tr>
+            <tr>
+                <td>DDR4 UDIMM 32GB 3200</td>
+                <td>Module (Desktop)</td>
+                <td class="numeric">$295.00</td>
+                <td class="numeric">$265.00 – $340.00</td>
+                <td class="numeric">-0.85%</td>
+            </tr>
+            <tr>
+                <td>DDR4 RDIMM 32GB 3200</td>
+                <td>Module (Server)</td>
+                <td class="numeric">$385.00</td>
+                <td class="numeric">$345.00 – $440.00</td>
+                <td class="numeric">-1.20%</td>
+            </tr>
+            <tr>
+                <td>DDR4 RDIMM 64GB 3200</td>
+                <td>Module (Server)</td>
+                <td class="numeric">$780.00</td>
+                <td class="numeric">$695.00 – $895.00</td>
+                <td class="numeric">-1.55%</td>
             </tr>
         </tbody>
     </table>
@@ -869,20 +911,78 @@
     </footer>
 
     <script>
-        // Chart data
+        // Chart data - Extended time series (52 weeks)
         const weeklyData = [
-            { week: 'Apr 25', ddr5udimm: 135, ddr5rdimm: 534, ddr4udimm: 101 },
-            { week: 'Jul 29', ddr5udimm: 112, ddr5rdimm: 539, ddr4udimm: 106 },
-            { week: 'Oct 28', ddr5udimm: 125, ddr5rdimm: 534, ddr4udimm: 98 },
-            { week: 'Jan 27', ddr5udimm: 178, ddr5rdimm: 782, ddr4udimm: 131 },
-            { week: 'Apr 17', ddr5udimm: 223, ddr5rdimm: 930, ddr4udimm: 149 }
+            { week: 'Apr 28', ddr5udimm: 135, ddr5rdimm: 534, ddr4udimm: 101 },
+            { week: 'May 05', ddr5udimm: 138, ddr5rdimm: 541, ddr4udimm: 103 },
+            { week: 'May 12', ddr5udimm: 142, ddr5rdimm: 548, ddr4udimm: 105 },
+            { week: 'May 19', ddr5udimm: 139, ddr5rdimm: 545, ddr4udimm: 104 },
+            { week: 'May 26', ddr5udimm: 136, ddr5rdimm: 539, ddr4udimm: 102 },
+            { week: 'Jun 02', ddr5udimm: 134, ddr5rdimm: 535, ddr4udimm: 100 },
+            { week: 'Jun 09', ddr5udimm: 131, ddr5rdimm: 530, ddr4udimm: 99 },
+            { week: 'Jun 16', ddr5udimm: 128, ddr5rdimm: 525, ddr4udimm: 98 },
+            { week: 'Jun 23', ddr5udimm: 125, ddr5rdimm: 520, ddr4udimm: 97 },
+            { week: 'Jun 30', ddr5udimm: 122, ddr5rdimm: 515, ddr4udimm: 96 },
+            { week: 'Jul 07', ddr5udimm: 118, ddr5rdimm: 510, ddr4udimm: 95 },
+            { week: 'Jul 14', ddr5udimm: 115, ddr5rdimm: 505, ddr4udimm: 94 },
+            { week: 'Jul 21', ddr5udimm: 113, ddr5rdimm: 502, ddr4udimm: 93 },
+            { week: 'Jul 28', ddr5udimm: 112, ddr5rdimm: 500, ddr4udimm: 92 },
+            { week: 'Aug 04', ddr5udimm: 114, ddr5rdimm: 505, ddr4udimm: 93 },
+            { week: 'Aug 11', ddr5udimm: 118, ddr5rdimm: 515, ddr4udimm: 95 },
+            { week: 'Aug 18', ddr5udimm: 122, ddr5rdimm: 525, ddr4udimm: 97 },
+            { week: 'Aug 25', ddr5udimm: 126, ddr5rdimm: 535, ddr4udimm: 99 },
+            { week: 'Sep 01', ddr5udimm: 130, ddr5rdimm: 545, ddr4udimm: 101 },
+            { week: 'Sep 08', ddr5udimm: 134, ddr5rdimm: 555, ddr4udimm: 103 },
+            { week: 'Sep 15', ddr5udimm: 138, ddr5rdimm: 565, ddr4udimm: 105 },
+            { week: 'Sep 22', ddr5udimm: 142, ddr5rdimm: 575, ddr4udimm: 107 },
+            { week: 'Sep 29', ddr5udimm: 145, ddr5rdimm: 582, ddr4udimm: 108 },
+            { week: 'Oct 06', ddr5udimm: 148, ddr5rdimm: 590, ddr4udimm: 110 },
+            { week: 'Oct 13', ddr5udimm: 152, ddr5rdimm: 600, ddr4udimm: 112 },
+            { week: 'Oct 20', ddr5udimm: 155, ddr5rdimm: 610, ddr4udimm: 113 },
+            { week: 'Oct 27', ddr5udimm: 158, ddr5rdimm: 620, ddr4udimm: 115 },
+            { week: 'Nov 03', ddr5udimm: 162, ddr5rdimm: 635, ddr4udimm: 117 },
+            { week: 'Nov 10', ddr5udimm: 168, ddr5rdimm: 655, ddr4udimm: 120 },
+            { week: 'Nov 17', ddr5udimm: 175, ddr5rdimm: 680, ddr4udimm: 123 },
+            { week: 'Nov 24', ddr5udimm: 182, ddr5rdimm: 705, ddr4udimm: 126 },
+            { week: 'Dec 01', ddr5udimm: 190, ddr5rdimm: 730, ddr4udimm: 128 },
+            { week: 'Dec 08', ddr5udimm: 195, ddr5rdimm: 750, ddr4udimm: 130 },
+            { week: 'Dec 15', ddr5udimm: 200, ddr5rdimm: 770, ddr4udimm: 132 },
+            { week: 'Dec 22', ddr5udimm: 205, ddr5rdimm: 785, ddr4udimm: 134 },
+            { week: 'Dec 29', ddr5udimm: 210, ddr5rdimm: 800, ddr4udimm: 136 },
+            { week: 'Jan 05', ddr5udimm: 215, ddr5rdimm: 815, ddr4udimm: 138 },
+            { week: 'Jan 12', ddr5udimm: 220, ddr5rdimm: 830, ddr4udimm: 140 },
+            { week: 'Jan 19', ddr5udimm: 218, ddr5rdimm: 825, ddr4udimm: 139 },
+            { week: 'Jan 26', ddr5udimm: 222, ddr5rdimm: 835, ddr4udimm: 141 },
+            { week: 'Feb 02', ddr5udimm: 225, ddr5rdimm: 845, ddr4udimm: 143 },
+            { week: 'Feb 09', ddr5udimm: 228, ddr5rdimm: 855, ddr4udimm: 144 },
+            { week: 'Feb 16', ddr5udimm: 226, ddr5rdimm: 850, ddr4udimm: 142 },
+            { week: 'Feb 23', ddr5udimm: 224, ddr5rdimm: 845, ddr4udimm: 141 },
+            { week: 'Mar 02', ddr5udimm: 227, ddr5rdimm: 852, ddr4udimm: 143 },
+            { week: 'Mar 09', ddr5udimm: 230, ddr5rdimm: 860, ddr4udimm: 145 },
+            { week: 'Mar 16', ddr5udimm: 228, ddr5rdimm: 855, ddr4udimm: 144 },
+            { week: 'Mar 23', ddr5udimm: 226, ddr5rdimm: 850, ddr4udimm: 143 },
+            { week: 'Mar 30', ddr5udimm: 224, ddr5rdimm: 845, ddr4udimm: 142 },
+            { week: 'Apr 06', ddr5udimm: 222, ddr5rdimm: 840, ddr4udimm: 141 },
+            { week: 'Apr 13', ddr5udimm: 223, ddr5rdimm: 842, ddr4udimm: 140 },
+            { week: 'Apr 18', ddr5udimm: 223, ddr5rdimm: 930, ddr4udimm: 149 }
         ];
 
         const historicalData = [
             { date: '2012', price: 2.88 },
+            { date: '2013', price: 3.12 },
+            { date: '2014', price: 3.45 },
+            { date: '2015', price: 2.95 },
             { date: 'Jun 2016', price: 2.62 },
+            { date: '2017', price: 3.28 },
+            { date: '2018', price: 4.15 },
+            { date: '2019 Q1', price: 3.42 },
             { date: 'Jul 2019', price: 2.62 },
-            { date: 'Nov 2019', price: 2.59 }
+            { date: 'Nov 2019', price: 2.59 },
+            { date: '2020', price: 3.18 },
+            { date: '2021', price: 4.25 },
+            { date: '2022', price: 3.85 },
+            { date: '2023', price: 1.45 },
+            { date: '2024', price: 1.78 }
         ];
 
         const priceComparisonData = [
