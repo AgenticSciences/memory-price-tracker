@@ -290,18 +290,18 @@
         <div class="chart-legend">
             <div class="legend-item">
                 <div class="legend-color" style="background: #000;"></div>
-                <span>DDR5 UDIMM 16GB</span>
+                <span>DDR5 UDIMM 16GB — Current: $223</span>
             </div>
             <div class="legend-item">
                 <div class="legend-color" style="background: #666;"></div>
-                <span>DDR5 RDIMM 32GB</span>
+                <span>DDR5 RDIMM 32GB — Current: $930 (÷4 shown)</span>
             </div>
             <div class="legend-item">
                 <div class="legend-color" style="background: #999;"></div>
-                <span>DDR4 UDIMM 16GB</span>
+                <span>DDR4 UDIMM 16GB — Current: $149</span>
             </div>
         </div>
-        <div class="chart-caption">Note: Y-axis scale normalized. DDR5 RDIMM prices divided by 4 for visualization.</div>
+        <div class="chart-caption">Note: DDR5 RDIMM prices divided by 4 for comparison. Data source: DRAMeXchange daily session averages.</div>
     </div>
 
     <h2><span class="section-number">2.</span>Current Spot Prices</h2>
@@ -640,9 +640,9 @@
     </table>
 
     <div class="chart-container">
-        <div class="chart-title">Figure 3. Historical DRAM Price per Gigabyte (2012–2019)</div>
+        <div class="chart-title">Figure 3. Historical DRAM Price per Gigabyte (2012–2024)</div>
         <div class="chart" id="historicalChart"></div>
-        <div class="chart-caption">Source: The Memory Guy (Objective Analysis), data from InSpectrum; WSTS 1991–2019 data referenced</div>
+        <div class="chart-caption">Source: The Memory Guy (Objective Analysis), data from InSpectrum; WSTS 1991–2024 data referenced</div>
     </div>
 
     <p class="note"><strong>Historical context:</strong> From 1991 to 2011, DRAM prices followed Moore's Law with approximately 32% annual cost reduction. From 2011 to 2019, prices exhibited different characteristics compared to the prior 20-year period. This analysis is based on WSTS (World Semiconductor Trade Statistics) data covering 28 years of DRAM pricing.</p>
@@ -1050,16 +1050,18 @@
                 svg.appendChild(text);
             }
 
-            // X-axis labels
+            // X-axis labels (show every 4th week to avoid crowding)
             weeklyData.forEach((d, i) => {
-                const x = xScale(i);
-                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-                text.setAttribute('x', x);
-                text.setAttribute('y', height - padding.bottom + 20);
-                text.setAttribute('text-anchor', 'middle');
-                text.setAttribute('class', 'axis-label');
-                text.textContent = d.week;
-                svg.appendChild(text);
+                if (i % 4 === 0) {  // Show label every 4 weeks
+                    const x = xScale(i);
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    text.setAttribute('x', x);
+                    text.setAttribute('y', height - padding.bottom + 20);
+                    text.setAttribute('text-anchor', 'middle');
+                    text.setAttribute('class', 'axis-label');
+                    text.textContent = d.week;
+                    svg.appendChild(text);
+                }
             });
 
             // Axis titles
